@@ -36,4 +36,19 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   }
+
+    "scripts": {
+    "dev": "hugo server --disableFastRender --navigateToChanged",
+    "dev:drafts": "hugo server --disableFastRender --navigateToChanged --buildDrafts",
+    "build": "hugo --minify --gc",
+    "build:preview": "hugo --minify --gc --buildFuture --buildDrafts",
+    "lint": "npm run lint:markdown && npm run lint:styles",
+    "lint:markdown": "markdownlint-cli2 \"content/**/*.md\" \"*.md\"",
+    "lint:styles": "stylelint \"assets/scss/**/*.scss\" --cache",
+    "test": "hugo server --disableFastRender --navigateToChanged --environment=test",
+    "clean": "hugo mod clean && npm run clean:node",
+    "clean:node": "rm -rf node_modules package-lock.json",
+    "update": "hugo mod get -u && npm update"
+  }
 }
+
