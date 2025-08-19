@@ -1,43 +1,15 @@
 {
-  "name": "patthaapaaram",
-  "version": "1.8.0",
-  "description": "Doks theme",
-  "author": "Thulite",
+  "name": "vichithram",
+  "version": "0.1.0",
+  "description": "Thulite Doks site",
+  "author": "Your Name",
   "license": "MIT",
+  "homepage": "https://thinkkbaby.github.io/vichithram/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thuliteio/doks.git"
+    "url": "https://github.com/thinkkbaby/vichithram.git"
   },
   "scripts": {
-    "create": "hugo new",
-    "dev": "hugo server --disableFastRender --noHTTPCache",
-    "format": "prettier **/** -w -c",
-    "build": "hugo --minify --gc",
-    "preview": "vite preview --outDir public"
-  },
-  "dependencies": {
-    "@thulite/doks-core": "^1.8.3",
-    "@thulite/images": "^3.3.1",
-    "@thulite/inline-svg": "^1.2.0",
-    "@thulite/seo": "^2.4.1",
-    "@tabler/icons": "^3.34.1",
-    "thulite": "^2.6.3"
-  },
-  "devDependencies": {
-    "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.29.5",
-    "prettier": "^3.6.2",
-    "vite": "^7.0.6"
-  },
-  "engines": {
-    "node": ">=20.11.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  }
-
-    "scripts": {
     "dev": "hugo server --disableFastRender --navigateToChanged",
     "dev:drafts": "hugo server --disableFastRender --navigateToChanged --buildDrafts",
     "build": "hugo --minify --gc",
@@ -49,6 +21,13 @@
     "clean": "hugo mod clean && npm run clean:node",
     "clean:node": "rm -rf node_modules package-lock.json",
     "update": "hugo mod get -u && npm update"
+  },
+  "devDependencies": {
+    "@thulite/doks-core": "^1.6.0",
+    "markdownlint-cli2": "^0.13.0",
+    "stylelint": "^16.6.1"
+  },
+  "dependencies": {
+    "hugo-bin": "^0.122.0"
   }
 }
-
