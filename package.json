@@ -11,9 +11,18 @@
   "scripts": {
     "create": "hugo new",
     "dev": "hugo server --disableFastRender --noHTTPCache",
+    "dev:drafts": "hugo server --disableFastRender --navigateToChanged --buildDrafts",
     "format": "prettier **/** -w -c",
     "build": "hugo --minify --gc",
-    "preview": "vite preview --outDir public"
+    "build:preview": "hugo --minify --gc --buildFuture --buildDrafts",
+    "preview": "vite preview --outDir public",
+    "lint": "npm run lint:markdown && npm run lint:styles",
+    "lint:markdown": "markdownlint-cli2 \"content/**/*.md\" \"*.md\"",
+    "lint:styles": "stylelint \"assets/scss/**/*.scss\" --cache",
+    "test": "hugo server --disableFastRender --navigateToChanged --environment=test",
+    "clean": "hugo mod clean && npm run clean:node",
+    "clean:node": "rm -rf node_modules package-lock.json",
+    "update": "hugo mod get -u && npm update"
   },
   "dependencies": {
     "@thulite/doks-core": "^1.8.3",
@@ -27,7 +36,9 @@
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.5",
     "prettier": "^3.6.2",
-    "vite": "^7.0.6"
+    "vite": "^7.0.6",
+    "markdownlint-cli2": "^0.13.0",
+    "stylelint": "^16.6.1"
   },
   "engines": {
     "node": ">=20.11.0"
@@ -36,19 +47,4 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   }
-
-    "scripts": {
-    "dev": "hugo server --disableFastRender --navigateToChanged",
-    "dev:drafts": "hugo server --disableFastRender --navigateToChanged --buildDrafts",
-    "build": "hugo --minify --gc",
-    "build:preview": "hugo --minify --gc --buildFuture --buildDrafts",
-    "lint": "npm run lint:markdown && npm run lint:styles",
-    "lint:markdown": "markdownlint-cli2 \"content/**/*.md\" \"*.md\"",
-    "lint:styles": "stylelint \"assets/scss/**/*.scss\" --cache",
-    "test": "hugo server --disableFastRender --navigateToChanged --environment=test",
-    "clean": "hugo mod clean && npm run clean:node",
-    "clean:node": "rm -rf node_modules package-lock.json",
-    "update": "hugo mod get -u && npm update"
-  }
 }
-
