@@ -1,6 +1,2 @@
 # Overrides for production environment
 baseurl = "https://thinkkbaby.github.io/vichithram/"
-
-# Critical for CSS loading on Amplify
-canonifyURLs = true
-relativeURLs = false
